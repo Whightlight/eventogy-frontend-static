@@ -5,8 +5,12 @@ import { getEvents } from "@/lib/get-events";
 export const revalidate = 120;
 
 export default async function Home() {
-
   const events = await getEvents();
 
-  return <EventCardGrid events={events} />;
+  return (
+    <div className="flex flex-col space-x-0 space-y-3">
+      <h1 className="text-7xl font-bold">Featured Events</h1>
+      <EventCardGrid events={events} />
+    </div>
+  );
 }

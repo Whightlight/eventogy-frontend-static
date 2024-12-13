@@ -1,4 +1,4 @@
-"server only";
+import "server-only";
 import { createApi } from "unsplash-js";
 import { EventsResponse } from "./types";
 import { unstable_cache } from "next/cache";
@@ -7,9 +7,8 @@ import { unstable_cache } from "next/cache";
 export const getEvents = unstable_cache(
   async () => {
     try {
-      const response = await fetch("https://www.eventogy.com/api/events.json", {
-        cache: "no-store",
-      });
+        
+      const response = await fetch("https://www.eventogy.com/api/events.json");
 
       if (!response.ok) {
         throw new Error("Failed to fetch events");
