@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col space-x-0 space-y-3">
-      <h1 className="text-7xl font-bold">Featured Events</h1>
+      <h1 className="text-7xl font-bold">Your Events</h1>
       <EventCardGrid events={events} />
     </div>
   );
