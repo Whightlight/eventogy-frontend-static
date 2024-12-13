@@ -7,11 +7,15 @@ export default function EventCardGrid({ events }: { events: Event[] }) {
     <div className="container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {events.map((event) => {
-          return (
-            <Link href={`event/${event.slug}`}>
-              <EventCard eventDetails={event} />
-            </Link>
-          );
+          if (event.is_public === 1 && event.is_published === 1) {
+            return (
+              <Link href={`event/${event.slug}`}>
+                <EventCard eventDetails={event} />
+              </Link>
+            );
+          } else {
+            return null;
+          }
         })}
       </div>
     </div>

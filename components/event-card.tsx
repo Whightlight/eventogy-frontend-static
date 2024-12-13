@@ -1,3 +1,4 @@
+import { event } from "firebase-functions/v1/analytics";
 import { Event } from "../lib/types";
 import {
   Card,
@@ -32,10 +33,29 @@ export default function EventCard({
         <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Card Content</p>
+        {eventDetails.data ? (
+          <div className="flex flex-col space-x-0">
+            {eventDetails.data.location_name && (
+              <p>{`Location: ${eventDetails.data.location_name}`}</p>
+            )}
+            {eventDetails.data.location_address && (
+              <p>{`Address: ${eventDetails.data.location_address}`}</p>
+            )}
+
+            {eventDetails.data.scheduled_dates &&  (
+              <div className="flex flex-col space-x-0 text-sm text-zinc-500">
+                {eventDetails.data.scheduled_dates.map((date) => {
+                  return <p key={date}>{`${new Date(date).toDateString()}`}</p>;
+                })}
+              </div>
+            )}
+          </div>
+        ) : null}
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        <p className=" text-xs text-zinc-300">{`Created: ${new Date(
+          eventDetails.created_at
+        ).toLocaleDateString()}`}</p>
       </CardFooter>
     </Card>
   );
