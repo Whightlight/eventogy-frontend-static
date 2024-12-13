@@ -8,7 +8,7 @@ export default async function Home() {
   const events = await getEvents();
 
   return (
-    <div className="flex flex-col space-x-0 space-y-3">
+    <div className="flex flex-col space-x-0 space-y-3 p-4">
       <h1 className="text-7xl font-bold">Your Events</h1>
       <EventCardGrid events={events} />
     </div>
