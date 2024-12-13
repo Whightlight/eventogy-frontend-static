@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import MoreOptionEventDropdown from "./more-options-event-dropdown";
+import EventImage from "./event-image";
 
 function formatDates(dates: string[]): string {
   const parsedDates = dates.map((date) => new Date(date));
@@ -52,12 +53,9 @@ export default function EventCard({
       >
         <CardHeader className="p-0">
           <div className="relative w-full h-48">
-            <Image
+            <EventImage
               alt={eventDetails.photo_description}
-              src={eventDetails.photo_url}
-              fill
-              style={{ objectFit: "cover" }}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              url={eventDetails.photo_url}
             />
           </div>
         </CardHeader>
