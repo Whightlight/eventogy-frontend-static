@@ -2,6 +2,10 @@
 
 # React Tech Task
 
+## Setup
+
+- Just paste in your UNSPLASH_ACCESS_KEY in a .env file and run 'npm run dev'!
+
 ## OVERVIEW
 
 You are tasked to build a simple interface against a slice of a REST API by forking this GitHub repository containing the foundation of a React + Next.js application.
