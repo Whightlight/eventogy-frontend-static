@@ -28,8 +28,8 @@ export default function EventCard({
         </div>
       </CardHeader>
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>{eventDetails.name}</CardTitle>
+        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
         <p>Card Content</p>
