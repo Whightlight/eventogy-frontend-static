@@ -2,6 +2,10 @@ import EventCardGrid from "@/components/event-grid";
 import { EventsResponse } from "@/lib/types";
 import { createApi } from "unsplash-js";
 
+
+// revalidate page every 2 minutes for new events (and photos..)
+export const revalidate = 120
+
 export default async function Home() {
   const response = await fetch("https://www.eventogy.com/api/events.json", {
     cache: "no-store",

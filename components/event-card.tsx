@@ -15,7 +15,7 @@ export default function EventCard({
   eventDetails: Event;
 }): JSX.Element {
   return (
-    <Card key={eventDetails.id} className="flex flex-col">
+    <Card key={eventDetails.id} className="flex flex-col  overflow-clip">
       <CardHeader className="p-0">
         <div className="relative w-full h-48">
           <Image
